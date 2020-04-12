@@ -6,20 +6,19 @@ class Fibonacci {
     fun productFibonacciSequenceFor(n: Int): IntArray {
         var first:Int = 0
         var second = 1
-        var third:Int = 0
+        var third:Int = 1
         var firstTemp:Int
         var result = intArrayOf(0,0,0)
-        while(second*third<n)
+        while(second*first<n)
         {
-            firstTemp = third
             third = first+second
             first = second
-            second = firstTemp
+            second = third
         }
-        if(second*third == n)
+        if(second*first == n)
             result[2] = 1
-        result[0] = second
-        result[1] = third
+        result[0] = first
+        result[1] = second
         return result
     }
 }
